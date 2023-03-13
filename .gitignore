@@ -1,4 +1,6 @@
 *build*
+*.DS_Store*
+*part_*
 CMakeLists.txt.user
 CMakeCache.txt
 CMakeFiles

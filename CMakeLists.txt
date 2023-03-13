@@ -4,7 +4,7 @@ set (JSON-ARRAY-SPLITTER_VERSION_MINOR 0)
 
 project (JSON-ARRAY-SPLITTER VERSION ${JSON-ARRAY-SPLITTER_VERSION_MAJOR}.${JSON-ARRAY-SPLITTER_VERSION_MINOR} LANGUAGES CXX)
 
-set (CMAKE_CXX_STANDARD 11)
+set (CMAKE_CXX_STANDARD 17)
 include_directories ("${PROJECT_SOURCE_DIR}/include/")
 include_directories ("${PROJECT_SOURCE_DIR}/include/util/")
 include_directories ("${PROJECT_SOURCE_DIR}/include/nlohmann/")
