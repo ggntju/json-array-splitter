@@ -52,4 +52,4 @@ The output files stay in the same folder as your binary, named with a _part_XXX_
 
  - C++ Standard: C++17
  
- - 
+ - Platform: Linux / Mac OS
