@@ -34,7 +34,7 @@ namespace util{
         pclose(pipe);
         return OK;
     }
-
+    
     inline bool file_exists(std::string path) {
         std::filesystem::path f{path.c_str()};
         if (std::filesystem::exists(f)) {
@@ -107,6 +107,27 @@ namespace util{
         }
         return false;
     } 
+
+    inline void process_first_part(std::filesystem::path path) {
+        std::string contents = util::read_file(path.string());
+        contents.replace(contents.length() - 2, 1, "\n");
+        contents.replace(contents.length() - 1, 1, "]");
+        util::write_file(path.string(), contents);
+    }
+
+    inline void process_last_part(std::filesystem::path path) {
+        std::string contents = util::read_file(path.string());
+        contents.insert(0, "[\n");
+        util::write_file(path.string(), contents);
+    }
+
+    inline void process_middle_part(std::filesystem::path path) {
+        std::string contents = util::read_file(path.string());
+        contents.insert(0, "[\n");
+        contents.replace(contents.length() - 2, 1, "\n");
+        contents.replace(contents.length() - 1, 1, "]");
+        util::write_file(path.string(), contents);
+    }
 }
 
 
